@@ -24,6 +24,10 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
     switch(action.type){
+        case "MARK_AS_DOING" :
+            let newState = {...state}
+            newState.columns[1].tasks.push(action.payload)
+            return newState
         default : 
             return state
     }

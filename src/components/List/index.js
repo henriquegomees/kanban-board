@@ -13,10 +13,9 @@ const List = ({column, index}) => (
 
         {
             column.tasks.map((task, taskIndex) => 
-                <ListItem taskname={task.name} key={taskIndex} columnIndex={index}/>
+                <ListItem task={task} key={taskIndex} columnIndex={index}/>
             )
         }
-
     </div>
 )
 
