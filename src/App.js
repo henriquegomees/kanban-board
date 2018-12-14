@@ -17,7 +17,10 @@ class App extends Component {
   }
 
   _handleAddTask(){
-    let task = {name: this.state.taskInput}
+    let { taskInput } = this.state
+    if(taskInput === ''){return alert('Task name is required')}
+
+    let task = {name: taskInput}
     this.props.addTask(task)
     this.setState({ openModal: false })
   }
