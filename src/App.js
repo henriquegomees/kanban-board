@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
 
-import ToDo from 'containers/ToDo'
-import Doing from 'containers/Doing'
-import Done from 'containers/Done'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import List from 'components/List'
 
 class App extends Component {
   render() {
@@ -13,13 +13,17 @@ class App extends Component {
         </header>
 
         <div className="container">
-          <ToDo></ToDo>
-          <Doing></Doing>
-          <Done></Done>
+          {
+            this.props.columns.map((column, index) => 
+              <List column={column} index={index} key={index} />
+            )
+          }
         </div>
+        
       </div>
     )
   }
 }
 
-export default App
+const mapStateToProps = state => ({ columns: state.kanban.columns })
+export default connect(mapStateToProps)(App)

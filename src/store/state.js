@@ -1,28 +1,23 @@
 const INITIAL_STATE = {
-    tasks: [
+    columns: [
         {
-            name: "Lern redux form",
-            todo: true,
-            doing: false,
-            done: false
+            name: 'ToDo',
+            tasks: [
+                { name: 'Market Website' },
+                { name: 'React challange' }
+            ]
         },
         {
-            name: "Learn the basics of react-native",
-            todo: false,
-            doing: true,
-            done: false
+            name: 'Doing',
+            tasks: [
+                { name: 'KanbanBoard' }
+            ]
         },
         {
-            name: "Study Vue.Js",
-            todo: false,
-            doing: false,
-            done: true
-        },
-        {
-            name: "Thats it fot today, folks",
-            todo: false,
-            doing: false,
-            done: true
+            name: 'Done',
+            tasks: [
+                { name: 'Whatever, something' }
+            ]
         }
     ]
 }

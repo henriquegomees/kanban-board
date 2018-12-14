@@ -1,14 +1,22 @@
 
 import React from 'react'
+
+import ListItem from './ListItem'
+
 import "./list.css"
 
-const List = props => (
+const List = ({column, index}) => (
     <div className="list">
         <header>
-            <h2>{props.name}</h2>
+            <h2>{column.name}</h2>
         </header>
 
-        {props.children}
+        {
+            column.tasks.map((task, taskIndex) => 
+                <ListItem taskname={task.name} key={taskIndex} columnIndex={index}/>
+            )
+        }
+
     </div>
 )
 
