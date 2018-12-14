@@ -1,6 +1,12 @@
 
-const markAsDoing = task => {
+const addTask = task => {
     console.log(task)
+    return dispatch => dispatch({
+        type: 'ADD_TASK',
+        payload: task
+    })
+} 
+const markAsDoing = task => {
     return dispatch => dispatch({
         type: 'MARK_AS_DOING',
         payload: task
@@ -8,5 +14,6 @@ const markAsDoing = task => {
 } 
 
 export {
-    markAsDoing
+    markAsDoing,
+    addTask
 }
