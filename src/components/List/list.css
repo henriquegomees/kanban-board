@@ -25,7 +25,11 @@ div.list .list-item{
     padding: 10px;
     border-radius: 3px;
     background-color: #e5e5e5;
-    box-shadow: 0px 3px 7px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 7px -4px rgba(0,0,0,0.75);
+}
+
+div.list .list-item:not(:first-child){
+    margin-top: 15px
 }
 
 div.list .list-item .buttons-wrapper{

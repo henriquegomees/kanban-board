@@ -1,14 +1,33 @@
 
 import React, { Component } from 'react'
-import List from 'components/List'
+import { connect } from 'react-redux'
 
-class DoingList extends Component {
+import List from 'components/List'
+import ListItem from 'components/List/ListItem'
+
+class DoingTasks extends Component {
     render() {
         return (
-            <List name="Doing">
+            <List name="Done">
+                {
+                    this.props.tasks.map(task => 
+                        !task.doing
+                        ? ''
+                        : <ListItem taskname={task.name}>
+                            <button title="Mark as ToDo">
+                                <i className="fa fa-list" />
+                            </button>
+
+                            <button title="Mark as Done">
+                                <i className="fa fa-check" />
+                            </button>
+                        </ListItem>
+                    )
+                }
             </List>
         )
     }
 }
 
-export default DoingList
+const mapStateToProps = state => ({ tasks: state.kanban.tasks })
+export default connect(mapStateToProps)(DoingTasks)
