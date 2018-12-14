@@ -7,6 +7,8 @@ const List = props => (
         <header>
             <h2>{props.name}</h2>
         </header>
+
+        {props.children}
     </div>
 )
 
