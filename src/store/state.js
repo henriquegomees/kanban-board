@@ -28,10 +28,12 @@ export default (state = INITIAL_STATE, action) => {
             let newState = {...state}
             newState.columns[1].tasks.push(action.payload)
             return newState
+
         case "ADD_TASK" :
             let addState = {...state}
             addState.columns[0].tasks.push(action.payload)
             return addState
+
         default : 
             return state
     }
