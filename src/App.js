@@ -22,7 +22,7 @@ class App extends Component {
 
     let task = {name: taskInput}
     this.props.addTask(task)
-    // this.setState({ openModal: false })
+    this.setState({ openModal: false, taskInput: '' })
   }
 
   render() {
@@ -52,12 +52,11 @@ class App extends Component {
             onChange={e => this.setState({ taskInput: e.target.value })}
             handleAddTask={this._handleAddTask.bind(this)}
             onClose={() => this.setState({openModal: false})} />
-
       </div>
     )
   }
 }
 
-const mapStateToProps = state => ({ columns: state.kanban.columns })
+const mapStateToProps    = state => ({ columns: state.kanban.columns })
 const mapDispatchToProps = dispatch => bindActionCreators({ addTask }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(App)

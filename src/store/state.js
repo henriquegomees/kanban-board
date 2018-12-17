@@ -3,22 +3,16 @@ const INITIAL_STATE = {
         {
             name: 'ToDo',
             tasks: [
-                { name: 'Market Website' },
-                { name: 'React challange' }
+                {name: 'Be kind to others.'}
             ]
         },
         {
             name: 'Doing',
-            tasks: [
-                { name: 'Kanban Board' }
-            ]
+            tasks: []
         },
         {
             name: 'Done',
-            tasks: [
-                { name: 'Whatever, something' },
-                { name: 'Write tests' }
-            ]
+            tasks: []
         }
     ]
 }

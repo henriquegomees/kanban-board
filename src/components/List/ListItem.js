@@ -8,7 +8,6 @@ import ActionButton from 'components/Button'
 import { markAsTodo, markAsDoing, markAsDone  } from 'store/actions'
 
 class ListItem extends Component {
-
     render(){
         let { task, taskindex, columnIndex, markAsDoing, markAsDone, markAsTodo } = this.props
         return(
