@@ -5,20 +5,20 @@ import { bindActionCreators } from 'redux'
 
 import ActionButton from 'components/Button'
 
-import { markAsDoing } from 'store/actions'
+import { markAsTodo, markAsDoing, markAsDone  } from 'store/actions'
 
 class ListItem extends Component {
 
     render(){
-        let { task, columnIndex, markAsDoing } = this.props
+        let { task, taskindex, columnIndex, markAsDoing, markAsDone, markAsTodo } = this.props
         return(
             <div className="list-item">
                 <p>{ task.name }</p>
                 <div className="buttons-wrapper">
                     
-                    { columnIndex !== 0 ? <ActionButton icon="list" title="Mark as ToDo" onClick={ () => alert(task) } /> : '' }
-                    { columnIndex !== 1 ? <ActionButton icon="spinner" title="Mark as Doing" onClick={ () => markAsDoing(task) } /> : '' }
-                    { columnIndex !== 2 ? <ActionButton icon="check" title="Mark as Done" onClick={ () => alert(task) } /> : '' }
+                    { columnIndex !== 0 ? <ActionButton icon="list" title="Mark as ToDo" onClick={ () => markAsTodo(task, columnIndex, taskindex) } /> : '' }
+                    { columnIndex !== 1 ? <ActionButton icon="spinner" title="Mark as Doing" onClick={ () => markAsDoing(task, columnIndex, taskindex) } /> : '' }
+                    { columnIndex !== 2 ? <ActionButton icon="check" title="Mark as Done" onClick={ () => markAsDone(task, columnIndex, taskindex) } /> : '' }
 
                 </div>
             </div>
@@ -26,5 +26,6 @@ class ListItem extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({markAsDoing}, dispatch)
-export default connect(null, mapDispatchToProps)(ListItem)
+const mapDispatchToProps = dispatch => bindActionCreators({markAsTodo, markAsDoing, markAsDone}, dispatch)
+const mapStateToProps    = state    => ({ columns: state.kanban.columns })
+export default connect(mapStateToProps, mapDispatchToProps)(ListItem)

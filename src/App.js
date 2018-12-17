@@ -22,7 +22,7 @@ class App extends Component {
 
     let task = {name: taskInput}
     this.props.addTask(task)
-    this.setState({ openModal: false })
+    // this.setState({ openModal: false })
   }
 
   render() {

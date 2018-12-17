@@ -30,7 +30,7 @@ const AddTask = props => {
             Cancel
           </Button>
           <Button onClick={props.handleAddTask} color="primary">
-            Subscribe
+            Add
           </Button>
         </DialogActions>
       </Dialog>

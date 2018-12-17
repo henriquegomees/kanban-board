@@ -13,7 +13,7 @@ const List = ({column, index}) => (
 
         {
             column.tasks.map((task, taskIndex) => 
-                <ListItem task={task} key={taskIndex} columnIndex={index}/>
+                <ListItem task={task} key={taskIndex} columnIndex={index} taskindex={taskIndex}/>
             )
         }
     </div>

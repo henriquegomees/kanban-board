@@ -6,14 +6,36 @@ const addTask = task => {
     })
 }
 
-const markAsDoing = task => {
+const markAsTodo = (task, columnIndex, taskindex) => {
+    return dispatch => dispatch({
+        type: 'MARK_AS_TODO',
+        payload: task,
+        columnIndex,
+        taskindex
+    })
+}
+
+const markAsDoing = (task, columnIndex, taskindex) => {
     return dispatch => dispatch({
         type: 'MARK_AS_DOING',
-        payload: task
+        payload: task,
+        columnIndex,
+        taskindex
+    })
+}
+
+const markAsDone = (task, columnIndex, taskindex) => {
+    return dispatch => dispatch({
+        type: 'MARK_AS_DONE',
+        payload: task,
+        columnIndex,
+        taskindex
     })
 }
 
 export {
     addTask,
-    markAsDoing
+    markAsTodo,
+    markAsDoing,
+    markAsDone
 }
