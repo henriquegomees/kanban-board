@@ -15,7 +15,7 @@ yarn && yarn start
 The application will pops up on your default browser.
 
 
-##Stack
+## Stack
 * [React](https://reactjs.org/)
 * [Redux](https://redux.js.org/)
 * [Material UI](https://material-ui.com/)
