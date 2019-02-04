@@ -5,7 +5,7 @@ A kanban board, from the kanban methodology, is widely used in Scrum for trackin
 
 ## Set up
 
-To run this application, all you'll need is to clone this repositorie and then run the following command on your terminal:
+To run this application, all you'll need is to clone this repository and then run the following command on your terminal:
 
 
 ```
